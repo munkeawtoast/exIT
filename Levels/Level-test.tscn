@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://DefaultLevel/DefaultLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DefaultLevel/TileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Node2D.gd" type="Script" id=3]
+[ext_resource path="res://Sprite/door7.png" type="Texture" id=4]
+
+[node name="Level" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="Map" index="0" instance=ExtResource( 2 )]
+position = Vector2( -16, -16 )
+tile_data = PoolIntArray( -131077, 7, 0, -131076, 7, 0, -131075, 7, 0, -131074, 7, 0, -131073, 7, 0, -196608, 7, 0, -196607, 7, 0, -196606, 7, 0, -196605, 7, 0, -196604, 7, 0, -196603, 7, 0, -65541, 7, 0, -65540, 5, 0, -65539, 5, 0, -65538, 5, 0, -65537, 5, 0, -131072, 5, 0, -131071, 7, 0, -131070, 5, 0, -131069, 5, 0, -131068, 5, 0, -131067, 7, 0, -5, 7, 0, -4, 5, 0, -3, 5, 0, -2, 5, 0, -1, 5, 0, -65536, 5, 0, -65535, 5, 0, -65534, 5, 0, -65533, 5, 0, -65532, 5, 0, 65531, 7, 0, 65532, 5, 0, 65533, 5, 0, 65534, 5, 0, 65535, 7, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 7, 0, 131067, 7, 0, 131068, 5, 0, 131069, 5, 0, 131070, 5, 0, 131071, 5, 0, 65536, 5, 0, 65537, 5, 0, 65538, 5, 0, 65539, 5, 0, 65540, 5, 0, 65541, 7, 0, 196603, 7, 0, 196604, 5, 0, 196605, 5, 0, 196606, 5, 0, 196607, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 7, 0, 131075, 5, 0, 131076, 5, 0, 131077, 7, 0, 262139, 7, 0, 262140, 7, 0, 262141, 7, 0, 262142, 7, 0, 262143, 7, 0, 196608, 7, 0, 196609, 7, 0, 196610, 7, 0, 196611, 7, 0, 196612, 7, 0, 196613, 7, 0 )
+
+[node name="door7" type="Sprite" parent="Map/TileMap" index="0"]
+position = Vector2( 176, -16 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="Map" index="1"]
+position = Vector2( -128, -64 )
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+position = Vector2( -16, -16 )
+script = ExtResource( 3 )
