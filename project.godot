@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="PSIT Project"
-run/main_scene="res://DefaultLevel/DefaultLevel.tscn"
+run/main_scene="res://Levels/Level-test.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -49,7 +49,7 @@ texture={
 
 ui_end={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777230,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777230,"unicode":0,"echo":false,"script":null)
  ]
 }
 
