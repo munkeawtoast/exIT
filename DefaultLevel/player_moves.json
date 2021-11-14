@@ -1,0 +1,78 @@
+{
+    "rook": [
+        {
+            "step": [0, 1],
+            "step_times": -1
+        },
+        {
+            "step": [1, 0],
+            "step_times": -1
+        },
+        {
+            "step": [-1, 0],
+            "step_times": -1
+        },
+        {
+            "step": [0, -1],
+            "step_times": -1
+        }
+    ],
+    "knight": [
+        {
+            "step": [1, 2]
+        },
+        {
+            "step": [2, 1]
+        },
+        {
+            "step": [-1, -2]
+        },
+        {
+            "step": [-2, -1]
+        },
+        {
+            "step": [-1, 2]
+        },
+        {
+            "step": [-2, 1]
+        },
+        {
+            "step": [2, -1]
+        },
+        {
+            "step": [1, -2]
+        }
+    ],
+    "bishop": [
+        {
+            "step": [1, 1],
+            "step_times": -1
+        },
+        {
+            "step": [1, -1],
+            "step_times": -1
+        },
+        {
+            "step": [-1, 1],
+            "step_times": -1
+        },
+        {
+            "step": [-1, -1],
+            "step_times": -1
+        }
+    ],
+    "elephant": [
+        {
+            "step": [2, 2]
+        },
+        {
+            "step": [2, -2]
+        },
+        {
+            "step": [-2, -2]
+        },
+        {
+            "step": [-2, 2]
+        }
+    ]
+}
