@@ -4,4 +4,5 @@
 
 [node name="Camera2D" type="Camera2D"]
 current = true
+zoom = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
