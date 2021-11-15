@@ -10,6 +10,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().paused = not get_tree().paused
-		print(get_tree().paused)
-		set_visibility(get_tree().paused)
+#		get_tree().paused = not get_tree().paused
+#		print(get_tree().paused)
+#		set_visibility(get_tree().paused)
+		get_tree().reload_current_scene()

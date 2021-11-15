@@ -2,7 +2,11 @@ extends Node2D
 
 enum ABILITY_ENUM {rook, knight, bishop, elephant}
 
+onready var movable_array_node = $"MovableArray"
+onready var player_sprite_node = $"Sprite"
+
 export(ABILITY_ENUM, FLAGS) var ability_flag: int = 1 setget reset_flag
+export(Texture) onready var sprite_texture
 
 const SIZE_MULTIPLIER = 32
 const MOVE_TIMES_LIMIT = 16
@@ -14,10 +18,8 @@ var available_moves: Array = []
 
 var moves_array: Array = []
 
-onready var movable_array_node = $"MovableArray"
-onready var player_sprite_node = $Sprite
-
 func _ready():
+	set_sprite(sprite_texture)
 	flag_to_ability()
 	var mmfile = File.new()
 	mmfile.open("res://DefaultLevel/player_moves.json", File.READ)
@@ -34,8 +36,8 @@ func reset_flag(flag):
 	ability = {}
 	flag_to_ability()
 
-func set_sprite(texture: Texture):
-	player_sprite_node.texture = texture
+func set_sprite(tex):
+	player_sprite_node.set_texture(tex)
 
 func flag_to_ability():
 	"""

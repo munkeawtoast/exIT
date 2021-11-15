@@ -14,4 +14,3 @@ func add_pause_menu() -> CanvasLayer:
 	var nod = pause_menu_node.instance()
 	add_child(nod)
 	return nod
-
