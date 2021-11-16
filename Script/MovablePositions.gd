@@ -12,8 +12,7 @@ func do_move_done(val):
 	make_button_visible()
 	
 func make_button_visible():
-	pass
-	# button.flat = false
+	button.flat = false
 
 func _physics_process(_delta):
 	if move_times < times:
