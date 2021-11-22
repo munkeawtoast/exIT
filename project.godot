@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="PSIT Project"
-run/main_scene="res://Levels/Level-test.tscn"
+run/main_scene="res://Levels/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=768
-window/size/height=576
+window/size/height=512
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

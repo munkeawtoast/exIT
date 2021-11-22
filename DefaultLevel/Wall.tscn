@@ -7,7 +7,6 @@ extents = Vector2( 15.9, 15.9 )
 
 [node name="Wall" type="StaticBody2D"]
 script = ExtResource( 1 )
-spriteimg = "res://icon.png"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

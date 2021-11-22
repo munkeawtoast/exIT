@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var pause_menu_node = load("res://DefaultLevel/PauseMenu.tscn")
+onready var player = $"Map/Player"
 
 var player_pos
 var map_size: Vector2

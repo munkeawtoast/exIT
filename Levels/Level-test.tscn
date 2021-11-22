@@ -21,13 +21,13 @@ position = Vector2( -128, -64 )
 ability_flag = 1
 sprite_texture = ExtResource( 5 )
 
-[node name="exitdoor" parent="Map" index="2" instance=ExtResource( 4 )]
-position = Vector2( 160, -32 )
-sprite_texture = ExtResource( 3 )
-target_scene = ExtResource( 6 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D" index="0"]
 position = Vector2( 192, -32 )
 shape = SubResource( 1 )
+
+[node name="exitdoor" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 160, -32 )
+sprite_texture = ExtResource( 3 )
+target_scene = ExtResource( 6 )
