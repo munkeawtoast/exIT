@@ -10,6 +10,7 @@ export(Texture) onready var sprite_texture
 
 const SIZE_MULTIPLIER = 32
 const MOVE_TIMES_LIMIT = 16
+const ANIMATION_TIME = 0.5
 
 var movable_positions = load("res://DefaultLevel/MovablePositions.tscn")
 
@@ -17,6 +18,8 @@ var ability: Dictionary = {}
 var available_moves: Array = []
 
 var moves_array: Array = []
+
+var is_moving = false
 
 func _ready():
 	set_sprite(sprite_texture)
@@ -80,10 +83,43 @@ func _get_available_move_pos():
 		movpos.get_node("Button").connect("pressed", self, "_movable_tile_pressed", [movpos])
 
 func _movable_tile_pressed(pos):
+	if is_moving: # ไม่เดินถ้าเดินอยู่ 
+		return
 	move(pos.position)
 
 func move(pos: Vector2):
-	position += pos
+	# ล็อกไม่ให้กดปุ่มอื่น
+	is_moving = true
+	var tween = Tween.new()
+	add_child(tween)
+	
+	# สั่งให้ค่าไหลเป็นเวลา ANIMATION_TIME
+	# เป็นทาง TRANS_CIRC
+	# ไอเดียคือ
+	# ให้ค่าเปลี่ยนตำแหน่ง sprite (เพื่อไม่ให้ไปชนส่วนอื่น)
+	# แล้วค่อยไปเปลี่ยนตำแหน่งของ player ทีหลัง
+	tween.interpolate_property(
+		player_sprite_node,
+		'position', Vector2(),
+		pos-player_sprite_node.position, ANIMATION_TIME, 
+		Tween.TRANS_CIRC, Tween.EASE_IN_OUT
+	)
+	# เรียก function moveself หลังผ่านไป ANIMATION_TIME วินาทีโดยแนบค่าหลังฟังชั่
+	# เพิ่มเติมดู docs นาจา
+	tween.interpolate_callback(self, ANIMATION_TIME, 'moveself', position+pos)
+
+	# รันทุกตัวที่กำหนดไป
+	tween.start()
+
+	# ปัญหาตอนนี้คือยังไม่ได้ลบ tweenตัวเก่า (เอาจริงไม่ใช้ปัญหา แต่ถ้าลบได้ก็น่าจะดี)
+	# TODO: ตัวลบ tweenเก่า
+	
+
+func moveself(to):
+	# แก้ตำแหน่งสไปร์ทกลับที่ origin แล้วเปลี่ยนตำแหน่งเราตาม
+	is_moving = false
+	player_sprite_node.position = Vector2()
+	position = to
 	for i in movable_array_node.get_children():
 		i.queue_free()
 	_get_available_move_pos()
