@@ -1,12 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Sprite/wall2.png" type="Texture" id=1]
-[ext_resource path="res://Sprite/wall1.png" type="Texture" id=2]
-[ext_resource path="res://Font/Menu-1.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Font/Menu-1.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprite/after_button.png" type="Texture" id=2]
+[ext_resource path="res://Sprite/face1.png" type="Texture" id=3]
 [ext_resource path="res://DefaultLevel/TileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprite/face2.png" type="Texture" id=5]
+[ext_resource path="res://Sprite/face3.png" type="Texture" id=6]
+[ext_resource path="res://Sprite/face4.png" type="Texture" id=7]
+[ext_resource path="res://Sprite/face5.png" type="Texture" id=8]
+[ext_resource path="res://Sprite/before_button.png" type="Texture" id=9]
+[ext_resource path="res://Levels/menuedition.gd" type="Script" id=10]
 
-[sub_resource type="Theme" id=3]
-default_font = ExtResource( 3 )
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
 
 [node name="Control" type="Control"]
 margin_right = 64.0
@@ -22,11 +28,10 @@ tile_data = PoolIntArray( -458764, 10, 0, -458763, 10, 0, -458762, 10, 0, -45876
 current = true
 
 [node name="Play" type="TextureButton" parent="."]
-margin_left = -128.0
-margin_top = 8.0
-margin_right = 128.0
-margin_bottom = 72.0
-texture_normal = ExtResource( 1 )
+margin_left = -126.0
+margin_right = 130.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -34,11 +39,11 @@ __meta__ = {
 }
 
 [node name="Tutorial" type="TextureButton" parent="."]
-margin_left = -128.0
-margin_top = 120.0
-margin_right = 128.0
-margin_bottom = 184.0
-texture_normal = ExtResource( 1 )
+margin_left = -126.318
+margin_top = 126.727
+margin_right = 129.682
+margin_bottom = 190.727
+texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -46,22 +51,69 @@ __meta__ = {
 }
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -15.1362
+margin_top = -22.7042
+margin_right = 24.8638
+margin_bottom = 17.2958
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 handle_input_locally = false
 render_target_update_mode = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -288.0
-margin_top = -168.0
-margin_right = 288.0
-margin_bottom = 24.0
-theme = SubResource( 3 )
-bbcode_enabled = true
-bbcode_text = "[center]exIT[/center]"
-text = "exIT"
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 5.27112
+margin_top = -188.681
+margin_right = 292.271
+margin_bottom = 3.31879
+theme = SubResource( 1 )
+bbcode_text = "IT"
+text = "IT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -264.654
+margin_top = -189.573
+margin_right = 21.3465
+margin_bottom = 2.42661
+theme = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "ex"
+text = "ex"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="face1" type="Sprite" parent="."]
+position = Vector2( -304.673, 119.033 )
+scale = Vector2( 2.75396, 2.75396 )
+texture = ExtResource( 3 )
+
+[node name="face2" type="Sprite" parent="."]
+position = Vector2( -215.415, 116.361 )
+scale = Vector2( 2.97668, 2.97668 )
+texture = ExtResource( 5 )
+
+[node name="face3" type="Sprite" parent="."]
+position = Vector2( 193.939, 47.088 )
+scale = Vector2( 1.96875, 1.96875 )
+texture = ExtResource( 6 )
+
+[node name="face4" type="Sprite" parent="."]
+position = Vector2( 288.307, 49.088 )
+scale = Vector2( 2.15625, 2.15625 )
+texture = ExtResource( 7 )
+
+[node name="face5" type="Sprite" parent="."]
+position = Vector2( 243.059, 137 )
+scale = Vector2( 2.15625, 2.15625 )
+texture = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="."]
+script = ExtResource( 10 )
+
+[connection signal="tween_all_completed" from="Tween" to="Tween" method="_animation_done"]
