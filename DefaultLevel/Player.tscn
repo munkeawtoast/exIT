@@ -13,7 +13,9 @@ ability_flag = 3
 
 [node name="Sprite" type="Sprite" parent="."]
 
-[node name="PlayerHitBox" type="Area2D" parent="."]
+[node name="PlayerHitBox" type="Area2D" parent="." groups=[
+"player",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitBox"]
 shape = SubResource( 1 )

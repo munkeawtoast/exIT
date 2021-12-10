@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Sprite/floor3.png" type="Texture" id=1]
 [ext_resource path="res://Sprite/floor5.png" type="Texture" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Sprite/door7.png" type="Texture" id=16]
 [ext_resource path="res://Sprite/player5.png" type="Texture" id=17]
 [ext_resource path="res://Levels/Level10.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprite/chair1.png" type="Texture" id=19]
+[ext_resource path="res://DefaultLevel/Key.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -272,7 +274,15 @@ position = Vector2( 144, 128 )
 sprite_texture = ExtResource( 16 )
 target_scene = ExtResource( 18 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="3"]
+[node name="Key" parent="Map" index="3" instance=ExtResource( 20 )]
+position = Vector2( 16, 64 )
+texture = ExtResource( 19 )
+
+[node name="Key2" parent="Map" index="4" instance=ExtResource( 20 )]
+position = Vector2( 48, 32 )
+texture = ExtResource( 19 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D" index="0"]
 position = Vector2( 144, 160 )
