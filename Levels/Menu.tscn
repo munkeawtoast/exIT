@@ -76,14 +76,13 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -264.654
-margin_top = -189.573
-margin_right = 21.3465
-margin_bottom = 2.42661
+margin_left = -392.0
+margin_top = -192.0
+margin_right = 41.0
 theme = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "ex"
-text = "ex"
+bbcode_text = " ex"
+text = " ex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
