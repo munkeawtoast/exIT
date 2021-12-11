@@ -21,12 +21,15 @@ func _physics_process(_delta):
 	else:
 		self.move_done = true
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
 	position -= step
 	move_done = true
 	make_button_visible()
+	if body.is_in_group("breakable"):
+		get_tree().current_scene.get_node("Map/Player").deleting_array.append(body.get_parent())
 	if move_times == 1:
 		queue_free()
+	
 		
 func move():
 	position += step
