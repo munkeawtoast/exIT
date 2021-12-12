@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprite/door8.png" type="Texture" id=1]
 [ext_resource path="res://DefaultLevel/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://DefaultLevel/DefaultLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DefaultLevel/exitdoor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprite/player4.png" type="Texture" id=5]
+[ext_resource path="res://Levels/Level03.tscn" type="PackedScene" id=6]
 
 [node name="Level" instance=ExtResource( 3 )]
 
@@ -23,3 +24,4 @@ tile_data = PoolIntArray( -196615, 9, 0, -196614, 9, 0, -196613, 9, 0, -196612, 
 position = Vector2( -80, -48 )
 rotation = -4.71239
 texture = ExtResource( 1 )
+target_scene = ExtResource( 6 )

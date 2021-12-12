@@ -94,46 +94,46 @@ func _movable_tile_pressed(pos):
 	move(pos.position)
 
 func move(pos: Vector2):
-    # ล็อกไม่ให้กดปุ่มอื่น
-    is_moving = true
-    var tween = Tween.new()
-    add_child(tween)
-    
-    # สั่งให้ค่าไหลเป็นเวลา ANIMATION_TIME
-    # เป็นทาง TRANS_CIRC
-    # ไอเดียคือ
-    # ให้ค่าเปลี่ยนตำแหน่ง sprite (เพื่อไม่ให้ไปชนส่วนอื่น)
-    # แล้วค่อยไปเปลี่ยนตำแหน่งของ player ทีหลัง
-    for i in ANIMATING:
-        tween.interpolate_property(
-            i,
-            'position', Vector2(),
-            pos-i.position, ANIMATION_TIME, 
-            Tween.TRANS_CUBIC, Tween.EASE_IN_OUT
-        )
-    for i in deleting_array:
-        i.queue_free()
-    deleting_array = []
-    # เรียก function moveself หลังผ่านไป ANIMATION_TIME วินาทีโดยแนบค่าหลังฟังชั่
-    # เพิ่มเติมดู docs นาจา
-    tween.interpolate_callback(self, ANIMATION_TIME, 'moveself', position+pos)
+	# ล็อกไม่ให้กดปุ่มอื่น
+	is_moving = true
+	var tween = Tween.new()
+	add_child(tween)
+	
+	# สั่งให้ค่าไหลเป็นเวลา ANIMATION_TIME
+	# เป็นทาง TRANS_CIRC
+	# ไอเดียคือ
+	# ให้ค่าเปลี่ยนตำแหน่ง sprite (เพื่อไม่ให้ไปชนส่วนอื่น)
+	# แล้วค่อยไปเปลี่ยนตำแหน่งของ player ทีหลัง
+	for i in ANIMATING:
+		tween.interpolate_property(
+			i,
+			'position', Vector2(),
+			pos-i.position, ANIMATION_TIME, 
+			Tween.TRANS_CUBIC, Tween.EASE_IN_OUT
+		)
+	for i in deleting_array:
+		i.queue_free()
+	deleting_array = []
+	# เรียก function moveself หลังผ่านไป ANIMATION_TIME วินาทีโดยแนบค่าหลังฟังชั่
+	# เพิ่มเติมดู docs นาจา
+	tween.interpolate_callback(self, ANIMATION_TIME, 'moveself', position+pos)
 
-    # รันทุกตัวที่กำหนดไป
-    tween.start()
+	# รันทุกตัวที่กำหนดไป
+	tween.start()
 
-    # ปัญหาตอนนี้คือยังไม่ได้ลบ tweenตัวเก่า (เอาจริงไม่ใช้ปัญหา แต่ถ้าลบได้ก็น่าจะดี)
-    # TODO: ตัวลบ tweenเก่า
-    
+	# ปัญหาตอนนี้คือยังไม่ได้ลบ tweenตัวเก่า (เอาจริงไม่ใช้ปัญหา แต่ถ้าลบได้ก็น่าจะดี)
+	# TODO: ตัวลบ tweenเก่า
+	
 
 func moveself(to):
-    # แก้ตำแหน่งสไปร์ทกลับที่ origin แล้วเปลี่ยนตำแหน่งเราตาม
-    is_moving = false
-    for i in ANIMATING:
-        i.position = Vector2()
-    
-    position = to
-    for i in movable_array_node.get_children():
-        i.queue_free()
-    _get_available_move_pos()
+	# แก้ตำแหน่งสไปร์ทกลับที่ origin แล้วเปลี่ยนตำแหน่งเราตาม
+	is_moving = false
+	for i in ANIMATING:
+		i.position = Vector2()
+	
+	position = to
+	for i in movable_array_node.get_children():
+		i.queue_free()
+	_get_available_move_pos()
 
 
