@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://DefaultLevel/Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DefaultLevel/Changeability.gd" type="Script" id=2]
+
+[node name="Changeablity" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_area_entered"]
