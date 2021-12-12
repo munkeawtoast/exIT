@@ -4,7 +4,7 @@ extends Tween
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var menu_objects = ["../Play","../Tutorial", "../face1","../face2","../face3","../face4","../face5"]
+var menu_objects = ["../Play","../Tutorial", "../face1","../face2","../face3","../face4","../face5", "../PlayText", "../TutorialText"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
