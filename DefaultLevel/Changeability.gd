@@ -13,10 +13,7 @@ func _area_entered(area):
 		changeabilty()
 # อัพเดทค่ากุญแจใน level และลบกุญแจ
 func changeabilty():
-	var player = get_tree().current_scene.get_node("Map/Player")
-	player.ability_flag = ability_flag
-	player.ability = {}
-	player.flag_to_ability()
+	get_tree().current_scene.get_node("Map/Player").ability_flag = ability_flag
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

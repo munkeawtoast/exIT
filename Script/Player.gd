@@ -29,21 +29,22 @@ var is_moving = false
 
 func _ready():
 	set_sprite(sprite_texture)
-	flag_to_ability()
-	var mmfile = File.new()
-	mmfile.open("res://DefaultLevel/player_moves.json", File.READ)
-	var unfiltered_dict = parse_json(mmfile.get_as_text())
-
-	for i in unfiltered_dict.keys():
-		if ability[i] == true:
-			moves_array.append_array(unfiltered_dict[i])
-
+	reset_flag(ability_flag)
 	_get_available_move_pos()
 
 func reset_flag(flag):
 	ability_flag = flag
 	ability = {}
 	flag_to_ability()
+
+	var mmfile = File.new()
+	mmfile.open("res://DefaultLevel/player_moves.json", File.READ)
+	var unfiltered_dict = parse_json(mmfile.get_as_text())
+
+	moves_array = []
+	for i in unfiltered_dict.keys():
+		if ability[i] == true:
+			moves_array.append_array(unfiltered_dict[i])
 
 func set_sprite(tex):
 	player_sprite_node.set_texture(tex)
