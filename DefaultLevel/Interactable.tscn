@@ -3,6 +3,7 @@
 [ext_resource path="res://Script/Interactable.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.5, 8.5 )
 
 [node name="Interactable" type="Sprite"]
 script = ExtResource( 1 )

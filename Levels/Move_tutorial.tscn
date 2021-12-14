@@ -4,9 +4,10 @@
 [ext_resource path="res://DefaultLevel/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://DefaultLevel/DefaultLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprite/face1.png" type="Texture" id=4]
-[ext_resource path="res://Levels/Back.gd" type="Script" id=5]
+[ext_resource path="res://Script/Back.gd" type="Script" id=5]
 [ext_resource path="res://Sprite/door17.png" type="Texture" id=6]
 [ext_resource path="res://Sprite/door16.png" type="Texture" id=7]
+
 
 [node name="Level" instance=ExtResource( 3 )]
 

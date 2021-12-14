@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Sprite/floor3.png" type="Texture" id=1]
 [ext_resource path="res://Sprite/floor5.png" type="Texture" id=2]
@@ -18,8 +18,10 @@
 [ext_resource path="res://Sprite/door7.png" type="Texture" id=16]
 [ext_resource path="res://Sprite/player5.png" type="Texture" id=17]
 [ext_resource path="res://Levels/Level02.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Sprite/chair1.png" type="Texture" id=19]
+[ext_resource path="res://Sprite/key1.png" type="Texture" id=19]
 [ext_resource path="res://DefaultLevel/Key.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Sprite/key7.png" type="Texture" id=21]
+[ext_resource path="res://DefaultLevel/PropTileMap.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -262,27 +264,35 @@ zoom = Vector2( 0.55, 0.55 )
 [node name="TileMap" parent="Map" index="0" instance=ExtResource( 6 )]
 position = Vector2( 0, 16 )
 tile_set = SubResource( 7 )
-tile_data = PoolIntArray( -262150, 10, 0, -262149, 10, 0, -262148, 10, 0, -262147, 10, 0, -262146, 10, 0, -262145, 10, 0, -327680, 10, 0, -327679, 10, 0, -327678, 10, 0, -327677, 10, 0, -327676, 10, 0, -327675, 10, 0, -196614, 10, 0, -196613, 10, 0, -196612, 10, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 10, 0, -262140, 10, 0, -262139, 10, 0, -131078, 10, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 10, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 10, 0, -65542, 10, 0, -65541, 2, 0, -65540, 2, 0, -65539, 10, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 10, 0, -131069, 2, 0, -131068, 2, 0, -131067, 10, 0, -6, 10, 0, -5, 2, 0, -4, 2, 0, -3, 10, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 10, 0, -65532, 2, 0, -65531, 10, 0, 65530, 10, 0, 65531, 2, 0, 65532, 2, 0, 65533, 10, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 10, 0, 131066, 10, 0, 131067, 2, 0, 131068, 2, 0, 131069, 10, 0, 131070, 10, 0, 131071, 2, 0, 65536, 2, 0, 65537, 10, 0, 65538, 2, 0, 65539, 10, 0, 65540, 2, 0, 65541, 10, 0, 196602, 10, 0, 196603, 10, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 10, 0, 131076, 2, 0, 131077, 10, 0, 262138, 10, 0, 262139, 10, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0, 262143, 10, 0, 196608, 10, 0, 196609, 10, 0, 196610, 10, 0, 196611, 10, 0, 196613, 10, 0 )
+tile_data = PoolIntArray( -262150, 10, 0, -262149, 10, 0, -262148, 10, 0, -262147, 10, 0, -262146, 10, 0, -262145, 10, 0, -327680, 10, 0, -327679, 10, 0, -327678, 10, 0, -327677, 10, 0, -327676, 10, 0, -327675, 10, 0, -196614, 10, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 2, 0, -262140, 2, 0, -262139, 10, 0, -131078, 10, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 10, 0, -65542, 10, 0, -65541, 2, 0, -65540, 2, 0, -65539, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 10, 0, -131069, 2, 0, -131068, 2, 0, -131067, 10, 0, -6, 10, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 10, 0, -65532, 2, 0, -65531, 10, 0, 65530, 10, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 10, 0, 131066, 10, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 10, 0, 65538, 2, 0, 65539, 10, 0, 65540, 2, 0, 65541, 10, 0, 196602, 10, 0, 196603, 10, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 10, 0, 131076, 2, 0, 131077, 10, 0, 262138, 10, 0, 262139, 10, 0, 262140, 10, 0, 262141, 10, 0, 262142, 10, 0, 262143, 10, 0, 196608, 10, 0, 196609, 10, 0, 196610, 10, 0, 196611, 10, 0, 196613, 10, 0 )
 
-[node name="Player" parent="Map" index="1"]
+[node name="PropTileMap" parent="Map" index="1" instance=ExtResource( 22 )]
+position = Vector2( 0, 16 )
+tile_data = PoolIntArray( -196613, 11, 0, -196612, 11, 0, -196609, 2, 0, -262141, 11, 0, -262140, 11, 0, -131073, 2, 0, -65539, 7, 0, -131070, 12, 0, -3, 7, 0, 65533, 7, 0, 131069, 7, 0, 131070, 7, 0 )
+
+[node name="Player" parent="Map" index="2"]
 position = Vector2( 80, 96 )
 ability_flag = 1
 sprite_texture = ExtResource( 17 )
 
-[node name="door7" parent="Map" index="2" instance=ExtResource( 7 )]
+[node name="door7" parent="Map" index="3" instance=ExtResource( 7 )]
 position = Vector2( 144, 128 )
 sprite_texture = ExtResource( 16 )
 target_scene = ExtResource( 18 )
 
-[node name="Key" parent="Map" index="3" instance=ExtResource( 20 )]
+[node name="Key" parent="Map" index="4" instance=ExtResource( 20 )]
 position = Vector2( 16, 64 )
+texture = ExtResource( 21 )
+
+[node name="Key3" parent="Map" index="5" instance=ExtResource( 20 )]
+position = Vector2( -80, -96 )
 texture = ExtResource( 19 )
 
-[node name="Key2" parent="Map" index="4" instance=ExtResource( 20 )]
+[node name="Key2" parent="Map" index="6" instance=ExtResource( 20 )]
 position = Vector2( 48, 32 )
 texture = ExtResource( 19 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="5"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Map" index="7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StaticBody2D" index="0"]
 position = Vector2( 144, 160 )

@@ -13,10 +13,10 @@
 [ext_resource path="res://Script/SceneChanger.gd" type="Script" id=11]
 [ext_resource path="res://Font/Menu-1.tres" type="DynamicFont" id=12]
 
-[sub_resource type="Theme" id=2]
+[sub_resource type="Theme" id=1]
 default_font = ExtResource( 1 )
 
-[sub_resource type="Theme" id=1]
+[sub_resource type="Theme" id=2]
 default_font = ExtResource( 12 )
 
 [node name="Control" type="Control"]
@@ -65,7 +65,7 @@ margin_top = 16.0
 margin_right = 32.0
 margin_bottom = 40.0
 mouse_filter = 2
-theme = SubResource( 2 )
+theme = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Play[/center]"
 text = "Play"
@@ -80,7 +80,7 @@ margin_top = 144.0
 margin_right = 64.0
 margin_bottom = 168.0
 mouse_filter = 2
-theme = SubResource( 2 )
+theme = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Tutorial[/center]"
 text = "Tutorial"
@@ -93,7 +93,7 @@ margin_left = 5.27112
 margin_top = -188.681
 margin_right = 292.271
 margin_bottom = 3.31879
-theme = SubResource( 1 )
+theme = SubResource( 2 )
 bbcode_text = "IT"
 text = "IT"
 __meta__ = {
@@ -104,7 +104,7 @@ __meta__ = {
 margin_left = -392.0
 margin_top = -192.0
 margin_right = 41.0
-theme = SubResource( 1 )
+theme = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = " ex"
 text = " ex"
